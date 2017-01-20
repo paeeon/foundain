@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { NavController } from 'ionic-angular';
 
-import { HomePage } from '../pages/home/home';
-
+import { SignInPage } from '../pages/sign-in/sign-in';
+import { MasterListPage } from '../pages/master-list/master-list';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = HomePage;
+  rootPage = SignInPage;
+  @ViewChild('content') nav: NavController;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -18,5 +20,13 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+  }
+
+  goToMasterList(): void {
+    this.nav.push(MasterListPage);
+  }
+
+  goToSignIn(): void {
+    this.nav.push(SignInPage);
   }
 }

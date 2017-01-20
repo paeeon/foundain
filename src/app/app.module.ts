@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MasterListPage } from '../pages/master-list/master-list';
 
@@ -13,7 +13,7 @@ import { MasterListPage } from '../pages/master-list/master-list';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    SignInPage,
     TabsPage,
     MasterListPage,
   ],
@@ -26,7 +26,7 @@ import { MasterListPage } from '../pages/master-list/master-list';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    SignInPage,
     TabsPage,
     MasterListPage,
   ],
