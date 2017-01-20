@@ -7,6 +7,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MasterListPage } from '../pages/master-list/master-list';
+import { DetailPage } from '../pages/detail/detail';
+import { FoundationService } from '../services/foundation.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { MasterListPage } from '../pages/master-list/master-list';
     SignInPage,
     TabsPage,
     MasterListPage,
+    DetailPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -29,7 +32,11 @@ import { MasterListPage } from '../pages/master-list/master-list';
     SignInPage,
     TabsPage,
     MasterListPage,
+    DetailPage,
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    FoundationService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}

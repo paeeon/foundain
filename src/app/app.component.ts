@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 
 import { SignInPage } from '../pages/sign-in/sign-in';
 import { MasterListPage } from '../pages/master-list/master-list';
@@ -12,6 +12,7 @@ import { MasterListPage } from '../pages/master-list/master-list';
 export class MyApp {
   rootPage = SignInPage;
   @ViewChild('content') nav: NavController;
+  @ViewChild('menu') menuCtrl: MenuController;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -23,10 +24,12 @@ export class MyApp {
   }
 
   goToMasterList(): void {
-    this.nav.push(MasterListPage);
+    this.nav.push(MasterListPage)
+      .then(() => this.menuCtrl.close());
   }
 
   goToSignIn(): void {
-    this.nav.push(SignInPage);
+    this.nav.push(SignInPage)
+      .then(() => this.menuCtrl.close());
   }
 }
