@@ -1,6 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Master List</ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
+
+<ion-content padding>
+  <h2>Some shit right here</h2>
+  <p>Bro bro bro bro bro bro</p>
+  <button ion-button full (click)="getPlanets()"></button>
+</ion-content>

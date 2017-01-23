@@ -1,8 +1,12 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="arrow-back" (click)="goBack()"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Sign In</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>

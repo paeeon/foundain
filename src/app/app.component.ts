@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { NavController, MenuController } from 'ionic-angular';
-
+import { HomePage } from '../pages/home/home';
 import { SignInPage } from '../pages/sign-in/sign-in';
 import { MasterListPage } from '../pages/master-list/master-list';
 
@@ -10,7 +10,7 @@ import { MasterListPage } from '../pages/master-list/master-list';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = SignInPage;
+  rootPage = HomePage;
   @ViewChild('content') nav: NavController;
   @ViewChild('menu') menuCtrl: MenuController;
 
