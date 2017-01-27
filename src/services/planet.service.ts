@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Planet } from '../models/planet';
-import { Http, Response } from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
+import apiKeys from '../../apiKeys';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PlanetService {
   constructor(private http: Http) {}
 
+  headers = new Headers({
+    'Content-Type': 'multipart/form-data',
+    'Ocp-Apim-Subscription-Key': '19c5daf8d07b48f79c3464016cee958f'
+  });
   planetUrl = `http://swapi.co/api/planets/`;
+  imageUrl = `https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=`;
 
   public getPlanets(): Promise<Planet[]> {
     return this.http.get(`${this.planetUrl}`)
