@@ -1,6 +1,10 @@
 .home-banner {
+  display: flex;
   overflow: hidden;
+  width: 100%;
   height: 100%;
+  justify-content: center;
+  background-color: #0D0B09;
   img {
     height: 100%;
     object-fit: cover;
