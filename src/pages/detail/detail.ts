@@ -30,17 +30,16 @@ export class DetailPage implements OnInit {
   }
 
   // this ain't working yet hah
-  // private goToSlide(slideNumber: number): void {
-  //   if (!this.slidesShowing) this.slidesShowing = true;
-  //   console.log('this.slides', this.slides);
-  //   this.slides.slideTo(slideNumber);
-  // }
+  private goToSlide(slideNumber: number): void {
+    if (!this.slidesShowing) this.slidesShowing = true;
+    console.log('this.slides', Slides);
+    // this.slides.slideTo(slideNumber);
+  }
 
   private getFoundation(foundationId): void {
     this.FoundationService.getFoundation(foundationId)
       .then(foundation => {
         this.foundation = foundation;
-        console.log(this.foundation);
       });
   }
 }

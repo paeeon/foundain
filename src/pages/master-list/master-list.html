@@ -11,20 +11,20 @@
 
 <ion-content>
   <div class="foundations">
-    <div *ngFor="let foundation of foundations" class="foundation">
-      <div class="image-container" (click)="goToFoundation(foundation)">
+    <div *ngFor="let foundation of foundations" class="foundation" (click)="goToFoundation(foundation)">
+      <div class="image-container">
         <img src={{foundation.image}}>
       </div>
       <div class="details-container">
         <h3 class="brand">{{foundation.brand}}</h3>
-        <h2 class="name" (click)="goToFoundation(foundation)">{{foundation.name}}</h2>
+        <h2 class="name">{{foundation.name}}</h2>
         <div class="properties">
           <div class="coverage row clearfix">
             <div class="left">Coverage</div>
             <div class="right">{{foundation.coverage}}</div>
           </div>
           <div class="finishes row clearfix">
-            <div class="left">Finishes</div>
+            <div class="left">Finish</div>
             <div class="right">
               <div *ngFor="let finish of foundation.finish">
                 {{finish}}
@@ -33,7 +33,7 @@
           </div>
           <div class="price row clearfix">
             <div class="left">Price</div>
-            <div class="right">{{foundation.price}}</div>
+            <div class="right">{{foundation.price | currency:'USD':true}}</div>
           </div>
         </div>
       </div>

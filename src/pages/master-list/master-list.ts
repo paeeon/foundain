@@ -22,7 +22,6 @@ export class MasterListPage {
   }
 
   openMenu(): void {
-    console.log("open sesame!");
     this.menuCtrl.open();
   }
 

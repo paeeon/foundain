@@ -34,6 +34,23 @@
       <h3 class="mini-header">Description</h3>
       <p class="description">{{foundation.description}}</p>
     </div>
+    <div class="details-container">
+      <h3 class="mini-header">Details</h3>
+      <div class="row clearfix">
+        <div class="left">Coverage</div>
+        <div class="right">{{foundation.coverage}}</div>
+      </div>
+      <div class="row clearfix">
+        <div class="left">Finish</div>
+        <div class="right">
+          <p class="finish" *ngFor="let finish of foundation.finish">{{ finish }}</p>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="left">Price</div>
+        <div class="right">{{ foundation.price | currency:'USD':true }}</div>
+      </div>
+    </div>
   </div>
   <ion-slides *ngIf="slidesShowing">
     <ion-slide *ngFor="let image of foundation.secondaryImages">
