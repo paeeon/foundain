@@ -12,7 +12,15 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,900');
+$font-stack: 'Nunito Sans', sans-serif;
 
+$light-purple: #E0DFE6;
+$purple: #A69AD0;
+$dark-grey: #2D2E2E;
+$medium-grey: #D2D5D8;
+$light-grey: #F5F5F8;
+$chartreuse: #F4F34C;
 
 
 // Named Color Variables
@@ -24,8 +32,8 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
+  primary:    #A69AD0,
+  secondary:  #F4F34C,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222

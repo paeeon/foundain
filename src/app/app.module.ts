@@ -10,7 +10,7 @@ import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MasterListPage } from '../pages/master-list/master-list';
 import { DetailPage } from '../pages/detail/detail';
-import { PlanetService } from '../services/planet.service';
+import { FoundationService } from '../services/foundation.service'
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { PlanetService } from '../services/planet.service';
     DetailPage,
   ],
   providers: [
-    PlanetService,
+    FoundationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

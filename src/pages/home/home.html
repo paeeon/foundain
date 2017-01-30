@@ -1,10 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar class="transparent">
+    <ion-title>Foundain</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>Foundain</h1>
-  <button ion-button full (click)="goToSignIn()">Sign In</button>
+<ion-content>
+  <div class="home-banner">
+    <div class="cta">
+      <span class="cta-text">Find the perfect foundation.</span>
+    </div>
+    <img src="https://images.unsplash.com/photo-1475832966090-2e180ebd2803?dpr=1&auto=format&fit=crop&w=767&h=512&q=80&cs=tinysrgb&crop=">
+  </div>
 </ion-content>
+
+<ion-footer class="home-footer">
+  <button ion-button full class="no-padding" (click)="goToSignIn()">Sign In</button>
+</ion-footer>

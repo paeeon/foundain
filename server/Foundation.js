@@ -3,9 +3,12 @@ var mongoose = require('mongoose');
 var foundationSchema = mongoose.Schema({
   name: String,
   coverage: String,
-  finish: String,
+  finish: [String],
   price: Number,
-  brand: String
+  brand: String,
+  image: String,
+  secondaryImages: [String],
+  description: String
 });
 
 var Foundation = mongoose.model('Foundation', foundationSchema);

@@ -23,7 +23,7 @@ export class MyApp {
     });
   }
 
-  goToMasterList(): void {
+  goToFoundations(): void {
     this.nav.push(MasterListPage)
       .then(() => this.menuCtrl.close());
   }

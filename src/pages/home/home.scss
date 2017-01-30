@@ -1,0 +1,35 @@
+.home-banner {
+  overflow: hidden;
+  height: 100%;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+ion-footer.home-footer {
+  &::before {
+    height: 0px;
+  }
+}
+
+button.no-padding {
+  margin: 0;
+}
+
+.cta {
+  position: absolute;
+  right: 16px;
+  bottom: 60px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0);
+  width: 90%;
+  z-index: 1;
+  .cta-text {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: .1px;
+    color: white;
+    line-height: 50px;
+  }
+}

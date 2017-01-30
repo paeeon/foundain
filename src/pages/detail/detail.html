@@ -1,6 +1,54 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
-    <ion-title>Detail</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="foundation">{{foundation.name}}</ion-title>
   </ion-navbar>
 </ion-header>
+
+<ion-content>
+  <div class="detail" *ngIf="foundation && !slidesShowing">
+    <div class="primary-image-container">
+      <div class="large-image">
+        <img src={{foundation.image}} (click)="showSlides()">
+      </div>
+    </div>
+    <div class="other-images" (click)="showSlides()">
+      <div class="flex-wrapper">
+        <div class="secondary-image">
+          <img id="secondary-image-0"
+               src={{foundation.secondaryImages[0]}}
+               >
+        </div>
+        <div class="secondary-image">
+          <img id="secondary-image-1"
+               src={{foundation.secondaryImages[1]}}
+               >
+        </div>
+        <div class="secondary-image">
+          <img id="secondary-image-2"
+               src={{foundation.secondaryImages[2]}}
+               >
+        </div>
+      </div>
+    </div>
+    <div class="details-container">
+      <h3 class="mini-header">Description</h3>
+      <p class="description">{{foundation.description}}</p>
+    </div>
+  </div>
+  <ion-slides *ngIf="slidesShowing">
+    <ion-slide *ngFor="let image of foundation.secondaryImages">
+      <img src="{{image}}">
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar *ngIf="slidesShowing">
+    <ion-buttons end>
+      <button ion-button color="primary" (click)="hideSlides()">Close</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

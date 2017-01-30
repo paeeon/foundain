@@ -1,0 +1,48 @@
+.detail {
+  .primary-image-container {
+    width: 100%;
+    background-color: white;
+    img {
+      object-fit: contain;
+    }
+  }
+  .other-images {
+    background-color: white;
+    display: block;
+    height: 80px;
+    margin-bottom: 16px;
+    .flex-wrapper {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+      .secondary-image {
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        img {
+          object-fit: contain;
+          max-height: 80px;
+        }
+      }
+    }
+  }
+  .details-container {
+    padding: 8px 16px 8px 16px;
+    background-color: white;
+    .mini-header {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 0;
+      margin-bottom: 8px;
+      color: lighten($dark-grey, 40%);
+    }
+    p.description {
+      color: $dark-grey
+    }
+  }
+}

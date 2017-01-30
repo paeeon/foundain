@@ -1,23 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { PlanetService } from '../../services/planet.service';
-import { Planet } from '../../models/planet';
+import { Component } from '@angular/core';
+import { FoundationService } from '../../services/foundation.service';
+import { DetailPage } from '../detail/detail';
+import { Foundation } from '../../models/Foundation';
 
 import { NavController, MenuController } from 'ionic-angular';
 
 @Component({
   templateUrl: 'master-list.html'
 })
-export class MasterListPage implements OnInit {
-  planets: Planet[];
+export class MasterListPage {
+  foundations: Foundation[];
 
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
-    private PlanetService: PlanetService
+    private FoundationService: FoundationService
   ) {}
 
-  ngOnInit() {
-    this.getPlanets();
+  ionViewDidLoad() {
+    this.getFoundations();
   }
 
   openMenu(): void {
@@ -25,8 +26,16 @@ export class MasterListPage implements OnInit {
     this.menuCtrl.open();
   }
 
-  getPlanets(): void {
-    this.PlanetService.getPlanets()
-      .then((planets) => this.planets = planets);
+  goToFoundation(foundation): void {
+    this.navCtrl.push(DetailPage, {
+      id: foundation._id
+    });
+  }
+
+  getFoundations(): void {
+    this.FoundationService.getFoundations()
+      .then(foundations => {
+        this.foundations = foundations;
+      });
   }
 }
