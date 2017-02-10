@@ -10,6 +10,19 @@
 </ion-header>
 
 <ion-content>
+  <div class="filter">
+    <ion-searchbar
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="search(myInput)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+    <div class="found-ations">
+      <div class="search-result" *ngFor="let foundation of foundFoundations | async">
+        {{foundation.brand}} {{foundation.name}}
+      </div>
+    </div>
+  </div>
   <div class="foundations">
     <div *ngFor="let foundation of foundations" class="foundation" (click)="goToFoundation(foundation)">
       <div class="image-container">

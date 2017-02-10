@@ -1,4 +1,5 @@
 export class Foundation {
+  _id: String;
   name: String;
   coverage: String;
   finish: String[];

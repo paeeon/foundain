@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Foundation } from '../models/Foundation';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -16,11 +17,16 @@ export class FoundationService {
       .catch(this.handleError);
   }
 
-  public getFoundation(foundationId): Promise<Foundation> {
+  public getFoundation(foundationId: number): Promise<Foundation> {
     return this.http.get(`${this.serverUrl}/foundation/${foundationId}`)
       .toPromise()
       .then(foundation => foundation.json() as Foundation)
       .catch(this.handleError);
+  }
+
+  public search(foundationName: string): Observable<Array<Foundation>> {
+    return this.http.get(`${this.serverUrl}/foundations/search?name=${foundationName}`)
+      .map(response => response.json() as Foundation[]);
   }
 
   private handleError(error: Response | any) {

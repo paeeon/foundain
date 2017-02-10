@@ -9,7 +9,7 @@ import { FoundationService } from '../../services/foundation.service';
 export class DetailPage implements OnInit {
   @ViewChild(Slides) slides: Slides;
   foundation: Foundation;
-  slidesShowing: Boolean;
+  slidesShowing: boolean;
 
   constructor(
     public navCtrl: NavController,
@@ -21,19 +21,10 @@ export class DetailPage implements OnInit {
     this.getFoundation(this.params.get('id'));
   }
 
-  private showSlides(): void {
-    this.slidesShowing = true;
-  }
-
-  private hideSlides(): void {
-    this.slidesShowing = false;
-  }
-
   // this ain't working yet hah
   private goToSlide(slideNumber: number): void {
     if (!this.slidesShowing) this.slidesShowing = true;
-    console.log('this.slides', Slides);
-    // this.slides.slideTo(slideNumber);
+    console.log(this.slides);
   }
 
   private getFoundation(foundationId): void {

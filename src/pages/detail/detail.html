@@ -11,14 +11,15 @@
   <div class="detail" *ngIf="foundation && !slidesShowing">
     <div class="primary-image-container">
       <div class="large-image">
-        <img src={{foundation.image}} (click)="showSlides()">
+        <img src={{foundation.image}} (click)="slidesShowing = true">
       </div>
     </div>
-    <div class="other-images" (click)="showSlides()">
+    <div class="other-images" (click)="slidesShowing = true">
       <div class="flex-wrapper">
         <div class="secondary-image">
           <img id="secondary-image-0"
-               src={{foundation.secondaryImages[0]}}>
+               src={{foundation.secondaryImages[0]}}
+               (click)="goToSlide(0)">
         </div>
         <div class="secondary-image">
           <img id="secondary-image-1"
@@ -52,7 +53,7 @@
       </div>
     </div>
   </div>
-  <ion-slides *ngIf="slidesShowing">
+  <ion-slides *ngIf="slidesShowing" zoom="true">
     <ion-slide *ngFor="let image of foundation.secondaryImages">
       <img src="{{image}}">
     </ion-slide>
@@ -62,7 +63,7 @@
 <ion-footer>
   <ion-toolbar *ngIf="slidesShowing">
     <ion-buttons end>
-      <button ion-button color="primary" (click)="hideSlides()">Close</button>
+      <button ion-button color="primary" (click)="this.slidesShowing = false">Close</button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
